@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      <app-counter [n]="n"></app-counter>
+      <div class="h1 text-danger text-center">
+        {{ n }}
+      </div>
+      <div *ngIf="nArray.length > 5; else a" class="border border rounded">
+        <div *ngFor="let i of nArray" class="alert alert-primary">
+          <app-list [n]="i"></app-list>
+        </div>
+      </div>
+      <ng-template #a>
+        <div class="alert alert-info">Current value is {{ n }}</div>
+      </ng-template>
+    </div>
+
+    <div class="col-sm-6">
+      <app-personalinfo></app-personalinfo>
+    </div>
+  </div>
+</div>

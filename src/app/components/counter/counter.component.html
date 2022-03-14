@@ -1,0 +1,15 @@
+<h1 class="text-center">Counter</h1>
+      <form class="text-center">
+        <input
+          type="number"
+          placeholder="Enter Number"
+          class="inputform"
+          [(ngModel)]="n"
+          name="n"
+        />
+        <button (click)="handleAdd()" class="btn btn-primary m-2">Add</button>
+        <button (click)="handleSubtract()" class="btn btn-warning m-2">
+          Subtract
+        </button>
+        <button (click)="handleReset()" class="btn btn-danger m-2">Reset</button>
+      </form>

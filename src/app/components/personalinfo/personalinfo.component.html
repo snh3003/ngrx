@@ -1,0 +1,44 @@
+<h1 class="text-center">Personal Info</h1>
+      <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+        <input
+          type="text"
+          class="inputform"
+          placeholder="Enter your Name"
+          [(ngModel)]="Name"
+          name="Name"
+          required
+        />
+        <input
+          type="date"
+          placeholder="Enter DOB"
+          class="inputform"
+          [(ngModel)]="d"
+          name="d"
+          required
+        />
+        <input
+          type="number"
+          placeholder="Enter Age"
+          class="inputform"
+          [(ngModel)]="age"
+          name="age"
+          required
+        />
+        <input
+          type="text"
+          placeholder="Enter URL"
+          class="inputform"
+          [(ngModel)]="imguri"
+          name="url"
+          required
+        />
+        <button (click)="onSubmit(f)" class="btn btn-primary m-2">
+          Submit
+        </button>
+        <div *ngIf="f.valid; else b">
+          <app-card [data]="f.value"></app-card>
+        </div>
+        <ng-template #b>
+          <div class="alert alert-danger">Please fill all the fields</div>
+        </ng-template>
+      </form>
